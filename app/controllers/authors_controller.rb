@@ -4,10 +4,10 @@ class AuthorsController < ApplicationController
   end
 
   def new
+    @author = Author.new
   end
 
   def create
-
     @author = Author.new(author_params)
 
     if @author.valid?
@@ -21,6 +21,6 @@ class AuthorsController < ApplicationController
   private
 
   def author_params
-    params.permit(:email, :name, :phone_number)
+    params.permit(:name, :email, :phone_number)
   end
 end
